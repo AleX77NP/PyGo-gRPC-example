@@ -1,0 +1,18 @@
+syntax="proto3";
+package digimons;
+
+option go_package = "./server/digimons";
+
+message Digiquest {
+    string name = 1;
+}
+
+message Digisponse {
+    string name = 1;
+    string img = 2;
+    string level = 3;
+}
+
+service Diginfo {
+    rpc search (Digiquest) returns (Digisponse) {}
+}
